@@ -98,25 +98,21 @@ const PAGES = [
 ]
 
 # make documents
-makedocs(
-    modules = [JuliaZH, Base, Core],
-    clean = false,
-    doctest = false,
-    sitename = "Julia中文文档",
-    checkdocs = :none, # we do not have translation of stdlib now
-    linkcheck = false, # !("skiplinks" in ARGS),
-    format    = "pdf" in ARGS ? :latex : :html,
-    authors   = "Julia中文社区",
-    analytics = "UA-89508993-1",
-    pages = PAGES,
-    html_prettyurls = !("local" in ARGS),
-    html_canonical = "https://juliacn.github.io/JuliaZH.jl/latest/",
-)
+makedocs(modules=[JuliaZH, Base, Core],
+    clean=false,
+    doctest=false,
+    sitename="Julia中文文档",
+    checkdocs=:none, # we do not have translation of stdlib now
+    linkcheck=false, # !("skiplinks" in ARGS),
+    format="pdf" in ARGS ? :latex : :html,
+    authors="Julia中文社区",
+    analytics="UA-89508993-1",
+    pages=PAGES,
+    html_prettyurls=!("local" in ARGS),
+    html_canonical="http://docs.juliacn.com/latest/",)
 
-deploydocs(
-    repo = "github.com/JuliaCN/JuliaZH.jl.git",
-    target = "build",
-    julia = "0.7",
-    deps = nothing,
-    make = nothing,
-)
+deploydocs(repo="github.com/findmyway/JuliaZH.jl.git",
+    target="build",
+    julia="0.7",
+    deps=nothing,
+    make=nothing,)
